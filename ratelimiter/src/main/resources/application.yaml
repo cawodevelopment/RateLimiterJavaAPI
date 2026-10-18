@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: ratelimiter
+  cache:
+    type: redis
+  data:
+    redis:
+      host: ${SPRING_DATA_REDIS_HOST}
+      port: ${SPRING_DATA_REDIS_PORT}
+      database: ${SPRING_DATA_REDIS_DATABASE}
+
+server:
+  forward-headers-strategy: framework
