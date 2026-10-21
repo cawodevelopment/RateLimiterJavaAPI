@@ -11,3 +11,7 @@ spring:
 
 server:
   forward-headers-strategy: framework
+
+env:
+  max-requests: ${MAX_REQUESTS}
+  window-seconds: ${WINDOW_SECONDS}
