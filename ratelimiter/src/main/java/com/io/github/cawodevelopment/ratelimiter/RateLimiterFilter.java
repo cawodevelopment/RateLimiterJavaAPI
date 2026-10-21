@@ -38,8 +38,11 @@ public class RateLimiterFilter extends OncePerRequestFilter {
 
         if (!rateLimiterService.isAllowed(clientIp)) {
             response.setStatus(HttpStatus.TOO_MANY_REQUESTS.value());
-            response.setContentType("Application/json");
-            response.getWriter().write("{\"error\":\"Too many requests. Try again later.\"}");
+            response.setContentType("application/json");
+            response.getWriter().write(
+                    "{\"error\":\"Too many requests. Try again later.\"}"
+            );
+            return;
         }
 
         filterChain.doFilter(request, response);
